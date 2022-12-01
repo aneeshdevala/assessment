@@ -1,3 +1,4 @@
+import 'package:assesment/app/theme/appcolors.dart';
 import 'package:flutter/material.dart';
 
 // Text Styles
@@ -24,17 +25,13 @@ const TextStyle headlineStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
-const TextStyle bodyStyle = TextStyle(
-  fontSize: 16,
-  fontWeight: FontWeight.w400,
-);
+const TextStyle bodyStyle =
+    TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: kcWhite);
 
 const TextStyle subheadingStyle = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.w400,
 );
 
-const TextStyle captionStyle = TextStyle(
-  fontSize: 12,
-  fontWeight: FontWeight.w400,
-);
+const TextStyle captionStyle =
+    TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: kcWhite);
