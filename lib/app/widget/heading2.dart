@@ -2,7 +2,6 @@ import 'package:assesment/app/theme/appcolors.dart';
 import 'package:assesment/app/theme/textstyle.dart';
 import 'package:assesment/app/theme/whitespaces.dart';
 import 'package:flutter/material.dart';
-import 'package:toggle_switch/toggle_switch.dart';
 
 class Delegate2 extends SliverPersistentHeaderDelegate {
   // final Color backgroundColor;
@@ -53,7 +52,7 @@ class Delegate2 extends SliverPersistentHeaderDelegate {
                   ],
                 ),
                 vSpaceMin,
-                Text('You have 6 new leads on which action is required!',
+                const Text('You have 6 new leads on which action is required!',
                     style: captionStyle),
               ],
             )

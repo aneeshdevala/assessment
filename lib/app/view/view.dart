@@ -1,4 +1,3 @@
-import 'package:assesment/app/controller.dart';
 import 'package:assesment/app/theme/appcolors.dart';
 import 'package:assesment/app/theme/whitespaces.dart';
 import 'package:assesment/app/widget/cardsutils.dart';
@@ -20,12 +19,30 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            backgroundColor: kcWhite,
             toolbarHeight: 35,
-            leading: const CircleAvatar(),
+            leading: const CircleAvatar(
+              radius: 15,
+              backgroundColor: kcPrimary,
+              child: Icon(
+                Icons.person,
+                color: kcBlack,
+                size: 15,
+              ),
+            ),
             actions: const [
-              Icon(Icons.menu),
-              Icon(Icons.notification_add_outlined),
-              Icon(Icons.search)
+              Icon(
+                Icons.menu,
+                color: kcBlack,
+              ),
+              Icon(
+                Icons.notification_add_outlined,
+                color: kcBlack,
+              ),
+              Icon(
+                Icons.search,
+                color: kcBlack,
+              ),
             ],
           ),
           body: NestedScrollView(
@@ -82,67 +99,110 @@ class HomeScreen extends StatelessWidget {
                     itemCount: 20,
                     itemBuilder: (context, index) {
                       return Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 2,
-                                  blurRadius: 2,
-                                  offset: const Offset(
-                                      0, 2), // changes position of shadow
-                                ),
-                              ],
-                              color: kcWhite,
-                              borderRadius: BorderRadius.circular(10)),
-                          height: 380,
-                          width: double.infinity,
-                          child: Column(
-                            children: [
-                              ListView.builder(
-                                physics: const NeverScrollableScrollPhysics(),
-                                shrinkWrap: true,
-                                itemCount: 6,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return ListTile(
-                                    leading: Image.asset(
-                                        CardsUtils.leadIcon[index],
-                                        height: 25,
-                                        width: 25),
-                                    title: Text(CardsUtils.titles[index]),
-                                  );
-                                },
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                        padding: const EdgeInsets.all(10.0),
+                        child: Stack(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 2,
+                                      blurRadius: 2,
+                                      offset: const Offset(
+                                          0, 2), // changes position of shadow
+                                    ),
+                                  ],
+                                  color: kcWhite,
+                                  borderRadius: BorderRadius.circular(10)),
+                              height: 380,
+                              width: double.infinity,
+                              child: Column(
                                 children: [
-                                  Container(
-                                    height: 44,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.48,
-                                    decoration: const BoxDecoration(
-                                        color: kcGreen,
-                                        borderRadius: BorderRadius.only(
-                                            //topLeft: Radius.circular(10),
-                                            bottomLeft: Radius.circular(10))),
-                                    child: const Center(child: Text('Accept')),
+                                  ListView.builder(
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    itemCount: 6,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return ListTile(
+                                        leading: Image.asset(
+                                            CardsUtils.leadIcon[index],
+                                            height: 25,
+                                            width: 25),
+                                        title: Text(CardsUtils.titles[index]),
+                                      );
+                                    },
                                   ),
-                                  Container(
-                                    height: 44,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.45,
-                                    decoration: const BoxDecoration(
-                                        color: kcLightGreyColor,
-                                        borderRadius: BorderRadius.only(
-                                            // topRight: Radius.circular(10),
-                                            bottomRight: Radius.circular(10))),
-                                    child: const Center(child: Text('Reject')),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        height: 44,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.49,
+                                        decoration: const BoxDecoration(
+                                            color: kcGreen,
+                                            borderRadius: BorderRadius.only(
+                                                //topLeft: Radius.circular(10),
+                                                bottomLeft:
+                                                    Radius.circular(10))),
+                                        child:
+                                            const Center(child: Text('Accept')),
+                                      ),
+                                      Container(
+                                        height: 44,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.45,
+                                        decoration: const BoxDecoration(
+                                            color: kcLightGreyColor,
+                                            borderRadius: BorderRadius.only(
+                                                // topRight: Radius.circular(10),
+                                                bottomRight:
+                                                    Radius.circular(10))),
+                                        child:
+                                            const Center(child: Text('Reject')),
+                                      )
+                                    ],
                                   )
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
+                            Positioned(
+                                bottom: 60,
+                                right: 20,
+                                child: Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                      color: kcWhite,
+                                      borderRadius: BorderRadius.circular(30),
+                                      border:
+                                          Border.all(color: kcGreen, width: 2)),
+                                  child: Column(
+                                    children: const [
+                                      CircleAvatar(
+                                        radius: 15,
+                                        backgroundImage:
+                                            AssetImage('assets/avatar1.jpg'),
+                                      ),
+                                      vSpaceMin,
+                                      Icon(
+                                        Icons.arrow_upward,
+                                        color: kcGreen,
+                                      ),
+                                      vSpaceMin,
+                                      CircleAvatar(
+                                        radius: 15,
+                                        backgroundImage:
+                                            AssetImage('assets/avatar2.jpeg'),
+                                      ),
+                                    ],
+                                  ),
+                                ))
+                          ],
                         ),
                       );
                     },

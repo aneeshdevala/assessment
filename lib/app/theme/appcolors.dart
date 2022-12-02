@@ -6,6 +6,7 @@ const Color kcSecondary = Color.fromARGB(255, 2, 36, 65);
 const Color kcGreen = Colors.green;
 const Color kcGrey = Colors.grey;
 const Color kcWhite = Colors.white;
+const Color kcBlack = Colors.black;
 
 const Color kcMediumGreyColor = Color(0xff868686);
 const Color kcLightGreyColor = Color(0xffe5e5e5);

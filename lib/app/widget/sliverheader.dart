@@ -6,9 +6,9 @@ import 'package:toggle_switch/toggle_switch.dart';
 
 class Delegate extends SliverPersistentHeaderDelegate {
   // final Color backgroundColor;
-  final String _title;
+  final String title;
 
-  Delegate(this._title);
+  Delegate(this.title);
 
   @override
   Widget build(
@@ -23,7 +23,7 @@ class Delegate extends SliverPersistentHeaderDelegate {
           children: [
             ToggleSwitch(
               curve: Curves.easeIn,
-              customWidths: [100, 140],
+              customWidths: const [100, 140],
               initialLabelIndex: 1,
               cornerRadius: 20.0,
               radiusStyle: true,
@@ -38,7 +38,7 @@ class Delegate extends SliverPersistentHeaderDelegate {
                 [kcPrimary]
               ],
               onToggle: (index) {
-                print('switched to: $index');
+               // print('switched to: $index');
               },
             ),
           ],
